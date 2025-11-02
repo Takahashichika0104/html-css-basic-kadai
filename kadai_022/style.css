@@ -1,0 +1,116 @@
+/* 余白のリセット */
+h1, p, body {
+    margin: 0;
+}
+
+/* フォントサイズの設定 */
+p, a {
+    font-size: 20px;
+}
+
+/* header要素のスタイル */
+header {
+    margin-bottom: 20px;
+    background-color: rgb(244, 79, 79);
+    text-align: center;
+}
+
+/* header内のh1要素のスタイル */
+header h1 {
+    color: rgb(255, 255, 255);
+}
+
+/* main要素のスタイル */
+main {
+    padding: 10px; /* 上下左右の余白を10px */
+}
+
+/* id名parentの要素のスタイル (Flexコンテナ設定) */
+#parent {
+    display: flex; /* Flexコンテナにする */
+    justify-content: space-around; /* 子要素を両端も含めて均等な間隔で配置 */
+}
+
+/* class名contentsの要素のスタイル */
+.contents {
+    border: 3px solid rgb(238, 204, 204); /* 線で囲む (太さ3px, 実線, 色指定) */
+    flex-basis: 25%; /* 幅を親要素の25%にする (flex-basisを使用) */
+    padding: 10px 15px; /* 要素内の余白 (上下10px, 左右15px) */
+    margin: 20px 0; /* 要素外の余白 (上下20px, 左右0) */
+    text-align: center; /* 中の要素を中央揃え */
+}
+
+/* h2要素のスタイル */
+h2 {
+    font-size: 25px;
+    border-bottom: 3px dotted rgb(236, 122, 122); /* 下線 (太さ3px, 点線, 色指定) */
+}
+
+/* h2要素の前に「●」記号を表示 (擬似要素::beforeを使用) */
+h2::before {
+    content: "●";
+    color: rgb(239, 111, 139);
+    margin-right: 5px; /* 記号とテキストの間に少しスペースを空ける */
+}
+
+/* class名contents内の二番目のp要素内のテキストの最初の文字のスタイル */
+.contents p:nth-of-type(2)::first-letter {
+    font-weight: bold; /* 太字 */
+    color: rgb(97, 206, 249); /* 文字色 */
+}
+
+/* class名contents内のimg要素のスタイル */
+.contents img {
+    margin: 10px 0; /* 上下10px, 左右0 */
+    width: 70%; /* 幅を70% */
+}
+
+/* footer要素のスタイル */
+footer {
+    background-color: rgb(244, 79, 79); /* 背景色 */
+    text-align: center; /* 中身の要素を中央揃え */
+    padding: 10px 0; /* 見栄えを良くするため上下に少しパディングを追加 */
+}
+
+/* footer内のa要素のスタイル */
+footer a {
+    color: rgb(255, 255, 255); /* 通常時の文字色（白） */
+    text-decoration: none; /* 下線を消す（任意） */
+}
+
+/* 訪問済みリンクのスタイル */
+footer a:visited {
+    color: rgb(193, 234, 251); /* 訪問済み時の文字色 */
+}
+
+/* マウスホバー時のスタイル */
+footer a:hover {
+    color: rgb(245, 178, 168); /* マウスカーソルが乗った時の文字色 */
+}
+
+/* ---------------------------------------------------- */
+/* レスポンシブ対応 (画面幅 768px 以下) */
+/* ---------------------------------------------------- */
+@media screen and (max-width: 768px) {
+    /* h2要素のフォントサイズ変更 */
+    h2 {
+        font-size: 30px;
+    }
+
+    /* p要素のフォントサイズ変更 */
+    p {
+        font-size: 25px;
+    }
+
+    /* id名parentの要素（Flexコンテナ）の設定変更 */
+    #parent {
+        flex-direction: column; /* 子要素を縦に並べる */
+        align-items: center; /* 縦並びにした要素を中央に配置 */
+    }
+
+    /* .contents要素の幅調整 (縦並びにした時に画面幅いっぱいに広げる) */
+    .contents {
+        flex-basis: auto; /* flex-basisをリセット */
+        width: 90%; /* 親要素の幅に合わせて適切に設定 (例: 90%) */
+    }
+}
