@@ -1,0 +1,95 @@
+#top {
+  /* div要素（id名「top」）に対する装飾 */
+  width: 800px; /* 横幅を800px */
+  background-color: #dcc9f4; /* 背景色を「#dcc9f4」 */
+  margin: 20px auto; /* 上下に20pxの余白、画面の中央に配置 */
+  text-align: center; /* 中にあるp要素が中央揃えになるように */
+  display: flex; /* 3つのp要素が横並びになるように */
+  justify-content: center; /* p要素のグループを中央に配置（オプション） */
+  align-items: center; /* p要素を縦方向に中央に配置（オプション） */
+}
+
+.top-child {
+  /* p要素（class名「top-child」）に対する装飾 */
+  width: 20%; /* 横幅を親要素の20% */
+  background-color: #ffd9df; /* 背景色を「#ffd9df」 */
+  /* text-align: center; は親要素の #top で指定されているため、ここでは不要 */
+}
+
+/* --- middleセクションの装飾 --- */
+
+#middle {
+  /* div要素（id名「middle」）に対する装飾 */
+  width: 800px;
+  height: 800px;
+  background-color: #ffd9df;
+  margin: 20px auto;
+  /* 子要素を絶対位置で配置するための基準とする */
+  position: relative; 
+}
+
+#middle-child01,
+#middle-child02,
+#middle-child03 {
+  /* div要素（子要素）に対する共通の装飾 */
+  width: 200px;
+  height: 200px;
+  background-color: #87ceeb;
+  /* 絶対位置で配置を可能にする */
+  position: absolute; 
+}
+
+/* --- middleの子要素の個別配置 --- */
+
+#middle-child01 {
+  /* 上から100px、左から100px */
+  top: 100px;
+  left: 100px;
+}
+
+#middle-child02 {
+  /* 上から300px、左から300px */
+  top: 300px;
+  left: 300px;
+}
+
+#middle-child03 {
+  /* 上から500px、左から500px */
+  top: 500px;
+  left: 500px;
+}
+
+/* --- bottomセクション --- */
+
+#bottom {
+  /* div要素（id名「bottom」）に対する装飾 */
+  width: 800px; /* 横幅を800px */
+  height: 300px; /* 高さを300px */
+  background-color: #87ceeb; /* 背景色を「#87ceeb」 */
+  /* 画面の中央に配置 */
+  /* margin-topを20pxにしないことで、#middleのmargin-bottomと相殺され、間隔が20pxになる */
+  margin: 20px auto; 
+}
+
+#bottom-child01,
+#bottom-child02,
+#bottom-child03 {
+  /* div要素（id名「bottom-child01」「bottom-child02」「bottom-child03」）に対する共通の装飾 */
+  width: 400px; /* 横幅を400px */
+  height: 100px; /* 高さを100px */
+  background-color: #e5dcf0; /* 背景色を「#e5dcf0」 */
+}
+
+/* --- bottomの子要素の個別配置 (相対的な位置調整) --- */
+
+#bottom-child02 {
+  /* 本来の表示場所の左から200pxずらす (相対配置) */
+  position: relative;
+  left: 200px; /* 正の値で右に移動 */
+}
+
+#bottom-child03 {
+  /* 本来の表示場所の左から400pxずらす (相対配置) */
+  position: relative;
+  left: 400px; /* 正の値で右に移動 */
+}
